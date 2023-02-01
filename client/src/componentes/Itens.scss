@@ -1,0 +1,133 @@
+.lista {
+  margin: 30px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 45vh;
+  width: 510px;
+  overflow: auto;
+
+  .item {
+    position: relative;
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.288);
+    display: flex;
+    align-items: center;
+    width: 500px;
+    height: 50px;
+
+    .ativar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 20px;
+      width: 25px;
+      height: 25px;
+      color: transparent;
+      background-color: transparent;
+      border: 1px solid #7e7e7e;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &:hover {
+        border-color: darken($color: #7e7e7e, $amount: 30%);
+      }
+    }
+
+    p {
+      color: black;
+    }
+
+    &.marcado {
+      .ativar {
+        color: #5e17eb;
+      }
+
+      p {
+        text-decoration: line-through;
+      }
+    }
+
+    .editar-excluir {
+      position: absolute;
+      right: 0;
+
+      button {
+        margin: 0 10px;
+        background-color: transparent;
+        color: #b8b8b8;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          color: darken($color: #b8b8b8, $amount: 40%);
+        }
+      }
+    }
+  }
+}
+
+.editar-container {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.651);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+
+  &.aberto {
+    display: initial;
+  }
+
+  .editar-box {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 210px auto;
+    padding: 20px;
+
+    input {
+      border: none;
+      border-bottom: 1px solid rgb(75, 75, 75);
+      font-weight: normal;
+      outline: none;
+      font-size: 30px;
+    }
+
+    .botoes {
+      text-align: end;
+      margin-top: 20px;
+
+      button {
+        border: none;
+        margin: 0 10px;
+        padding: 5px;
+        font-size: 15px;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.082);
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 540px) {
+
+  .lista {
+    width: 310px;
+  
+    .item {
+      width: 300px;
+      height: 40px;
+      font-size: 15px;
+    }
+  }
+}
