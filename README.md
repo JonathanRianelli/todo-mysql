@@ -2,7 +2,7 @@
 
 <img src=".\client\src\img/crud-mysql.gif">
 
-## Istalação
+## Instalação
 
 ### Client
 
